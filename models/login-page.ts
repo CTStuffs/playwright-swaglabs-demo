@@ -7,12 +7,12 @@ export class LoginPage {
     readonly loginBtn: Locator;
     readonly errorMsgBox: Locator;
 
-    constructor(page: Page) {
-        this.page = page;
-        this.usernameField = page.locator('[data-test="username"]');
-        this.passwordField = page.locator('[data-test="password"]');
-        this.loginBtn = page.locator('[data-test="login-button"]');
-        this.errorMsgBox = page.locator('[data-test="error"]');
+    constructor(_page: Page) {
+        this.page = _page;
+        this.usernameField = _page.locator('[data-test="username"]');
+        this.passwordField = _page.locator('[data-test="password"]');
+        this.loginBtn = _page.locator('[data-test="login-button"]');
+        this.errorMsgBox = _page.locator('[data-test="error"]');
 
     }
 
