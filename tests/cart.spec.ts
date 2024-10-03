@@ -1,15 +1,11 @@
 
-import { test, expect } from '@playwright/test';
-import { LoginPage } from "../models/login-page";
-import { FrontPage } from "../models/front-page";
-import { HeaderBar } from "../models/header-bar";
-import { CartPage, CheckoutCart } from "../models/cart";
+
+import { CheckoutCart } from "../models/cart";
 import { CheckoutPage } from '../models/checkout';
 import data from '../test-data/test-data.json';
+import { test, expect } from "../fixtures/my-fixture";
 
-
-test.beforeEach(async ({ page }) => {
-    let loginPage = new LoginPage(page);
+test.beforeEach(async ({ page, loginPage }) => {
     await page.goto('/');
     await loginPage.inputCredentials("standard_user", "secret_sauce");
     await loginPage.clickLoginBtn();
@@ -18,10 +14,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('cart tests', () => {
 
-    test('add item to cart and check it is present', async ({ page }) => {
-        let frontPage = new FrontPage(page);
-        let headerBar = new HeaderBar(page);
-        let cartPage = new CartPage(page);
+    test('add item to cart and check it is present', async ({ page, frontPage, headerBar, cartPage }) => {
 
         await frontPage.addItemToCart(data.items[0].itemName);
         await headerBar.checkCartCapacity("1");
@@ -33,10 +26,7 @@ test.describe('cart tests', () => {
 
     });
 
-    test('add item and then delete it from cart', async ({ page }) => {
-        let frontPage = new FrontPage(page);
-        let headerBar = new HeaderBar(page);
-        let cartPage = new CartPage(page);
+    test('add item and then delete it from cart', async ({ page, frontPage, headerBar, cartPage }) => {
 
         await frontPage.addItemToCart(data.items[0].itemName);
         await headerBar.checkCartCapacity("1");
@@ -49,10 +39,7 @@ test.describe('cart tests', () => {
 
     });
 
-    test('checkout cart and pay for multiple items', async ({ page }) => {
-        let frontPage = new FrontPage(page);
-        let headerBar = new HeaderBar(page);
-        let cartPage = new CartPage(page);
+    test('checkout cart and pay for multiple items', async ({ page, frontPage, headerBar, cartPage }) => {
         let checkoutPage = new CheckoutPage(page);
         let checkoutCart = new CheckoutCart(page);
 

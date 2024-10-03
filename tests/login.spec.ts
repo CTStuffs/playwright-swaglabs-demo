@@ -3,7 +3,6 @@ import { LoginPage } from "../models/login-page";
 import data from '../test-data/test-data.json';
 
 test.beforeEach(async ({ page }) => {
-    console.log(`Running ${test.info().title}`);
     await page.goto('/');
 });
 
