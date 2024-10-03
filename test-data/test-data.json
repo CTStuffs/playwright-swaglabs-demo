@@ -1,0 +1,32 @@
+{
+    "items": [
+        {
+            "itemName": "Sauce Labs Backpack",
+            "itemDesc": "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.",
+            "itemPrice": "29.99"
+        },
+        {
+            "itemName": "Sauce Labs Bike Light",
+            "itemDesc": "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.",
+            "itemPrice": "9.99"
+        }
+    ],
+    "paymentInfo": {
+        "card": "SauceCard #31337",
+        "shipping": "Free Pony Express Delivery!",
+        "itemTotal": "39.98",
+        "tax": "3.20",
+        "fullTotal": "43.18"
+    },
+    "credentials": {
+        "username": "standard_user",
+        "password": "secret_sauce",
+        "badPassword": "BADPASSWORD",
+        "lockedOutUsername": "locked_out_user"
+    },
+    "personalDetails": {
+        "firstName": "Test",
+        "lastName": "LastName",
+        "zipcode": "1345"
+    }
+}
