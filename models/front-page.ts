@@ -1,9 +1,7 @@
-import { expect, type Locator, type Page } from '@playwright/test';
-
+import { type Locator, type Page } from '@playwright/test';
 
 export class FrontPage {
     readonly page: Page;
-    //readonly inventoryList: Locator;
     readonly inventoryItems: Locator;
 
     constructor(_page: Page) {
